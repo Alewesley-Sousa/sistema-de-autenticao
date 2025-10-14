@@ -14,8 +14,20 @@ class Model {
     }
     
     public function get($id) {
+        $sql = "SELECT * FROM usuario WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
         
     }
 }
 
+$model = new Model($pdo);
+$usuario = $model->get(1);
+
+if ($usuario) {
+    echo 'existe um usuario com este id';
+} else {
+    echo 'não tem um usuario com este id';
+}
 ?>
