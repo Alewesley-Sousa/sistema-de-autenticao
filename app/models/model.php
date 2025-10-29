@@ -38,5 +38,15 @@ class Model {
             $_SESSION['error'] = "não foi possivel editar o usuario.";
         }
     }
+
+    public function excluir($id) {
+        $sql = "DELETE FROM usuario WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        if ($stmt->execute([$id])) {
+            $_SESSION['sucesso'] = 'sucesso ao excluir o usuario';
+        } else {
+            $_SESSION['error'] = "erro ao excluir o usuario";
+        }
+    }
 }
 ?>
