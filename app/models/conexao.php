@@ -17,6 +17,6 @@ try {
 
     $pdo = new PDO($dns, DB_USER, DB_PASSWORD, $options);
 } catch (PDOException $e) {
-    die("eero na conexão com o banco de dados: " . $e->getMessage());
+    die("erro na conexão com o banco de dados: " . $e->getMessage());
 }
 ?>
