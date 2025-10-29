@@ -22,10 +22,10 @@ class Model {
         
     }
 
-    public function adicionar($usuario) {
-        $sql = "INSERT INTO usuario(nome_usuario, senha, nome, email, nivel_acesso) VALUE(?, ?, ?, ?, ?)";
+    public function criar($usuario) {
+        $sql = "INSERT INTO usuario(cargo, nome_usuario, senha, nome, email, telefone) VALUE(?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$usuario['usuario'], $usuario['senha'], $usuario['nome'], $usuario['email'], $usuario['acesso']]);
+        $stmt->execute([$usuario['cargo'], $usuario['nome_usuario'], $usuario['senha'], $usuario['nome'], $usuario['email'], $usuario['telefone']]);
         $_SESSION['sucesso'] = 'usuario criado com sucesso!';
     }
 
