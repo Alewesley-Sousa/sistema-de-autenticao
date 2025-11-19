@@ -10,5 +10,9 @@ class modelController {
 
     public function validarCampos($usuario) {
         $campos = ['nome_usuario', 'senha', 'nome', 'email', 'cargo', 'telefone'];
+
+        switch ($usuario) {
+            
+        }
     }
 }
